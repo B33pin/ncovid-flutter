@@ -6,6 +6,7 @@ import 'package:ncovid19/Screens/home_screen.dart';
 import 'package:number_display/number_display.dart';
 import '../Components/Reusable.dart';
 import 'SecondScreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Globalscreen extends StatefulWidget {
   Globalscreen({this.globaldata1, this.globaldata2});
@@ -25,6 +26,14 @@ class _GlobalscreenState extends State<Globalscreen> {
   void initState() {
     super.initState();
     updateui(widget.globaldata1);
+  }
+  _launchURL() async {
+    const url = 'https://www.worldometers.info/coronavirus/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
   void updateui(dynamic wdata) {
     setState(() {
@@ -146,24 +155,29 @@ class _GlobalscreenState extends State<Globalscreen> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: Reusable_Card(
-                      CardChild: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Center(child: Text('Active Cases:', style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.black,
-                              fontFamily: 'Righteous'
-                          ),)),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Text('${display(acases)}', style: TextStyle(
-                              fontSize: 30,
-                              color: Colors.black,
-                              fontFamily: 'Righteous'
-                          ),)
-                        ],
+                    child: GestureDetector(
+                      onLongPress: (){
+                        _launchURL();
+                      },
+                      child: Reusable_Card(
+                        CardChild: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Center(child: Text('Active Cases:', style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontFamily: 'Righteous'
+                            ),)),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Text('${display(acases)}', style: TextStyle(
+                                fontSize: 30,
+                                color: Colors.black,
+                                fontFamily: 'Righteous'
+                            ),)
+                          ],
+                        ),
                       ),
                     ),
                   ),
