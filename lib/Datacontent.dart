@@ -6,7 +6,12 @@ class DataModel {
     var weatherData = await networkingData.getdata();
     return weatherData;
   }
-
+  Future <dynamic> getglobaldata() async {
+    NetworkingData networkingData = NetworkingData(
+        url: 'https://api.thevirustracker.com/free-api?global=stats');
+    var weatherData = await networkingData.getdata();
+    return weatherData;
+  }
   Future <dynamic> getspecificcountrydata(String cityname) async {
     NetworkingData networkingData = NetworkingData(
         url: 'https://nirjal.herokuapp.com/services/api/corona/country=$cityname&apikey=lololo');
