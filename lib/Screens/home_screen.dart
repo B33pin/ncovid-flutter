@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
-import 'package:ncovid19/Datacontent.dart';
-import 'package:ncovid19/Global.dart';
-import 'package:ncovid19/SecondScreen.dart';
+import 'package:ncovid19/Networking/Datacontent.dart';
+import 'package:ncovid19/Screens/Global.dart';
+import 'package:ncovid19/Screens/SecondScreen.dart';
 import 'package:number_display/number_display.dart';
-import 'Reusable.dart';
-import 'dart:math';
+import '../Components/Reusable.dart';
 class Homescreen extends StatefulWidget {
   Homescreen({this.HomeData1, this.HomeData2});
   final  HomeData1, HomeData2;

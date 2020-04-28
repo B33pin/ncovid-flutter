@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 class Reusable_Card extends StatelessWidget {
   Reusable_Card({this.CardChild});

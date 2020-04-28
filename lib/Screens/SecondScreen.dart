@@ -2,8 +2,8 @@ import 'dart:math';
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:ncovid19/Global.dart';
-import 'package:ncovid19/home_screen.dart';
+import 'package:ncovid19/Screens/Global.dart';
+import 'package:ncovid19/Screens/home_screen.dart';
 import 'package:responsive_screen/responsive_screen.dart';
 class Secondscreen extends StatelessWidget {
   Secondscreen({this.SecondData1, this.SecondData2});

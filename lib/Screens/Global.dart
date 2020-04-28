@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
-import 'package:ncovid19/Datacontent.dart';
-import 'package:ncovid19/home_screen.dart';
+import 'package:ncovid19/Networking/Datacontent.dart';
+import 'package:ncovid19/Screens/home_screen.dart';
 import 'package:number_display/number_display.dart';
-import 'Reusable.dart';
+import '../Components/Reusable.dart';
 import 'SecondScreen.dart';
 
 class Globalscreen extends StatefulWidget {
